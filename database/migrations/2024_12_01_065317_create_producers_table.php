@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('label_types', function (Blueprint $table) {
+        Schema::create('producers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
+            $table->string('country');
+            $table->string('web');
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('label_types');
+        Schema::dropIfExists('producers');
     }
 };
